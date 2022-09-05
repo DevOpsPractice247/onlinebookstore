@@ -32,7 +32,7 @@ pipeline {
     }
     post{
         always{
-            slackSend channel: 'general', color: 'warning', message: 'Build completed'
+            slackSend channel: 'general', color: 'warning', message: 'BUILD COMPLETED'
             emailext attachLog: true, body: '''Report from project - ${PROJECT_NAME},
             Build number #${BUILD_NUMBER} 
             ${CAUSE}
@@ -41,7 +41,7 @@ url - ${BUILD_URL}
 ${CHANGES}''', subject: '${DEFAULT_SUBJECT}', to: 'pujarianveshkumar@gmail.com,poojarianveshkumar@outlook.com'
         }
         success{
-            slackSend channel: 'general', color: 'good', message: 'Build is successfull'
+            slackSend channel: 'general', color: 'good', message: 'Build SUCCESSFULL'
         }
         failure{
             slackSend channel: 'general', color: 'danger', message: 'BUILD FAILED'
