@@ -14,22 +14,6 @@ pipeline {
             bat 'mvn install'
           }
         }
-
-        stage('deploy') {
-          steps {
-            bat 'mvn sonar:sonar'
-          }
-        }
-
-      }
-    }
-
-    stage('deploy') {
-      steps {
-        bat 'mvn deploy'
-      }
-    }
-
     stage('') {
       steps {
         slackSend()
